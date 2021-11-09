@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+<h1>Messages</h1>
+
+<%= turbo_stream_from "messages" %>
+
+<%= turbo_frame_tag "message_form" do %>
+  <%= render "form", message: @message %>
+<% end %>
+
+<%= turbo_frame_tag "messages" do %>
+  <%= render @messages %>
+<% end %>
+<br>
+<%= link_to 'New Message', new_message_path %>

@@ -1,0 +1,9 @@
+<%= turbo_frame_tag dom_id(message) do%>
+  <p>
+    <strong>Item:</strong>
+    <%= message.item %>
+    <%= link_to 'Edit', edit_message_path(message) %>
+    <%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+  </p>
+<% end %>
