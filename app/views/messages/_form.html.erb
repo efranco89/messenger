@@ -11,12 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :item %>
-    <%= form.text_area :item %>
-  </div>
+  <div class="card">
+    <div class="card-body">
+      <%= form.label :item %>
+      <%= form.text_area :item, class: 'form-control' %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
+    <div class="card-footer text-center">
+      <%= form.submit %>
+    </div>
+
   </div>
 <% end %>

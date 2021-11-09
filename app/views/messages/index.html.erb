@@ -1,14 +1,22 @@
 <p id="notice"><%= notice %></p>
-<h1>Messages</h1>
 
-<%= turbo_stream_from "messages" %>
+<div class="container">
+  <div class="card">
+    <div class="card-header bg-info text-center text-white">
+      <h1>Messages</h1>
+    </div>
 
-<%= turbo_frame_tag "message_form" do %>
-  <%= render "form", message: @message %>
-<% end %>
+    <div class="card-body">
+      <%= turbo_stream_from "messages" %>
+      <%= turbo_frame_tag "message_form" do %>
+        <%= render "form", message: @message %>
+      <% end %>
+      <br><br>
+      <%= turbo_frame_tag "messages" do %>
+        <%= render @messages %>
+      <% end %>
 
-<%= turbo_frame_tag "messages" do %>
-  <%= render @messages %>
-<% end %>
-<br>
-<%= link_to 'New Message', new_message_path %>
+    </div>
+
+  </div>
+</div>
