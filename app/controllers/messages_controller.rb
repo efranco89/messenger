@@ -3,8 +3,8 @@ class MessagesController < ApplicationController
 
   # GET /messages or /messages.json
   def index
-    @message = Message.new
     @messages = Message.all
+    @message = Message.new
   end
 
   # GET /messages/1 or /messages/1.json
